@@ -7,7 +7,9 @@
 //============================================================================
 
 #include <iostream>
-#include "BitmapFileHeader.h"
+#include "./bitmap/BitmapFileHeader.h"
+#include "./bitmap/BitmapInfoHeader.h"
+
 using namespace std;
 
 int main() {
