@@ -9,10 +9,15 @@
 #include <iostream>
 #include "./bitmap/BitmapFileHeader.h"
 #include "./bitmap/BitmapInfoHeader.h"
+#include "./bitmap/Bitmap.h"
 
 using namespace std;
+using namespace fractal;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	Bitmap bitmap(800, 600);
+
+	bitmap.write("test.bmp");
+	cout << "Finished" << endl; // prints !!!Hello World!!!
 	return 0;
 }

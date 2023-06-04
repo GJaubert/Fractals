@@ -14,7 +14,7 @@ using namespace std;
 
 #pragma pack(2)
 
-namespace fractalproject {
+namespace fractal {
 
 struct BitmapFileHeader {
 	char header[2]{'B', 'M'};

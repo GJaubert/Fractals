@@ -15,7 +15,7 @@ using namespace std;
 
 #pragma pack(2)
 
-namespace fractalproject {
+namespace fractal {
 
 struct BitmapInfoHeader {
 	int32_t headerSize{40};

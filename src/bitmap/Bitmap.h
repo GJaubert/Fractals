@@ -10,14 +10,16 @@
 
 #include <string>
 #include <cstdint>
+#include <memory>
 using namespace std;
 
-namespace fractalproject {
+namespace fractal {
 
 class Bitmap {
 private:
 	int m_width{0};
 	int m_height{0};
+	unique_ptr<uint8_t[]> m_pPixels{nullptr};
 public:
 	Bitmap(int m_width, int m_height);
 
