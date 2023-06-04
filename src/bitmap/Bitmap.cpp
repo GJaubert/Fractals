@@ -31,7 +31,7 @@ bool Bitmap::write(string filename) {
 	infoHeader.width = m_width;
 	infoHeader.height = m_height;
 
-	fstream file;
+	ofstream file;
 
 	file.open(filename, ios::out|ios::binary);
 	if (!file) {
@@ -47,6 +47,16 @@ bool Bitmap::write(string filename) {
 		return false;
 	}
 	return true;
+}
+
+void Bitmap::setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue) {
+	uint8_t *pPixel = m_pPixels.get();
+
+	pPixel += y*m_width*3 + x*3;
+
+	pPixel[0] = blue;
+	pPixel[1] = green;
+	pPixel[2] = red;
 }
 
 Bitmap::~Bitmap() {
