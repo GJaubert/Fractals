@@ -53,7 +53,6 @@ int main() {
 				double hue = 0.0;
 				for (int i = 0; i <= iterations; i++) {
 					hue += (double)histogram[i] / total;
-					cout << hue;
 				}
 
 				uint8_t red = 0;
