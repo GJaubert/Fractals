@@ -76,7 +76,6 @@ int main() {
 
 	bitmap.write("test.bmp");
 
-	cout << min << " " << max << endl; // prints !!!Hello World!!!
 	cout << "Finished";
 	return 0;
 }
