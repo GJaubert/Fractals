@@ -13,6 +13,7 @@
 #include "Mandelbrot.h"
 #include "./zoom/Zoom.h"
 #include "./zoomlist/ZoomList.h"
+#include "./fractalcreator/FractalCreator.h"
 
 using namespace std;
 using namespace fractal;
@@ -67,7 +68,7 @@ int main() {
 							hue += (double)histogram[i] / total;
 						}
 
-						green = pow(255, hue);
+						green = hue * 255;
 				}
 
 				bitmap.setPixel(x, y, red, green, blue);
