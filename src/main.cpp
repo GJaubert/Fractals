@@ -27,17 +27,15 @@ int main() {
 
 	ZoomList zoomList(WIDTH, HEIGHT);
 
-	zoomList.add(Zoom(WIDTH / 2, HEIGHT / 2, 1));
+	zoomList.add(Zoom(WIDTH / 2, HEIGHT / 2, 2.0/WIDTH));
 
 	unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS]{0});
 	unique_ptr<int[]> fractal(new int[WIDTH*HEIGHT]{0});
 
 	for (int y = 0; y < HEIGHT; y++) {
 		for (int x = 0; x < WIDTH; x++) {
-			double xFractal = (x - WIDTH/2.0 - 200) / (HEIGHT/2.0);
-			double yFractal = (y - HEIGHT/2.0) / (HEIGHT/2.0);
-
-			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
+			pair<double, double> coords = zoomList.doZoom(x, y);
+			int iterations = Mandelbrot::getIterations(coords.first, coords.second);
 
 			fractal[y * WIDTH + x] = iterations;
 
