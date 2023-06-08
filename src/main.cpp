@@ -7,12 +7,8 @@
 //============================================================================
 
 #include <iostream>
-#include <memory>
-#include <math.h>
-#include "./bitmap/Bitmap.h"
-#include "Mandelbrot.h"
+
 #include "./zoom/Zoom.h"
-#include "./zoomlist/ZoomList.h"
 #include "./fractalcreator/FractalCreator.h"
 #include "./rgb/RGB.h"
 
@@ -21,7 +17,11 @@ using namespace fractal;
 
 int main() {
 
+
+
 	FractalCreator fractalCreator(800, 600);
+	fractalCreator.addZoom(Zoom(295, 202, 0.1));
+	fractalCreator.addZoom(Zoom(312, 304, 0.1));
 	fractalCreator.run("test.bmp");
 
 	cout << "Finished";
