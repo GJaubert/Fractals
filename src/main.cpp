@@ -14,6 +14,7 @@
 #include "./zoom/Zoom.h"
 #include "./zoomlist/ZoomList.h"
 #include "./fractalcreator/FractalCreator.h"
+#include "./rgb/RGB.h"
 
 using namespace std;
 using namespace fractal;
